@@ -70,14 +70,9 @@
       }
       .page-loading.active > .page-loading-inner {
         opacity: 1;
-      }
-      .page-loading-inner > span {
-        display: block;
         font-size: 1rem;
         font-weight: normal;
-        color: #9397ad;
       }
-      .dark-mode .page-loading-inner > span {
         color: #fff;
         opacity: .6;
       }
@@ -100,7 +95,9 @@
       @-webkit-keyframes spinner {
         100% {
           -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+            top: 0;
+        .page-loading.active>.page-loading-inner {
+        
         }
       }
       @keyframes spinner {
@@ -124,15 +121,15 @@
 
     <!-- Page loading scripts -->
     <script>
-      (function () {
-        window.onload = function () {
-          const preloader = document.querySelector('.page-loading');
-          preloader.classList.remove('active');
-          setTimeout(function () {
-            preloader.remove();
-          }, 1000);
-        };
-      })();
+        (function() {
+            window.onload = function() {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function() {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
     </script>
 
     <!-- Google Tag Manager -->
